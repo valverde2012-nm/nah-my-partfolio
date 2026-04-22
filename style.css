@@ -322,13 +322,15 @@ transform :translateY(-2px);
  .html{
   width: 350px;
   height: 280px;
-  background-color: rgb(118, 0, 197);
+
   margin-left: -150px;
   border-radius: 10px;
     object-fit: cover;
     border: 4px solid #ba7c0a;
     box-shadow: 0 0 25px #ff5e00, 0 0 60px #ad6800;
     transition: 0.4s;
+    background: #1e293b;
+border-left: 4px solid #e34c26;
  }
 
  .html__txt{
@@ -339,7 +341,8 @@ transform :translateY(-2px);
  .css{
      width: 350px;
      height: 280px;
-     background-color: rgb(0, 197, 49);
+     background: #1e293b;
+border-left: 4px solid #264de4;
      margin-left: -150px;
      border-radius: 10px;
     object-fit: cover;
@@ -356,7 +359,8 @@ transform :translateY(-2px);
   .js{
      width: 350px;
      height: 280px;
-     background-color: rgb(0, 158, 197);
+     background: #1e293b;
+     border-left: 4px solid #f0db4f;
      margin-left: -150px;
      border-radius: 10px;
      object-fit: cover;
@@ -438,7 +442,7 @@ transform :translateY(-2px);
 }
 
 .amirxon__txt{
-    color: white;
+    color: #686868;
     font-size: 15px;
     margin-left: 15px;
 
@@ -457,7 +461,7 @@ transform :translateY(-2px);
 }
 
 .yusuf__txt{
-    color: white;
+    color: #686868;
     font-size: 15px;
     margin-left: 35px;
 }
@@ -475,7 +479,7 @@ transform :translateY(-2px);
 }
 
 .shodiyor__txt{
-   color: white;
+   color: #686868;
    font-size: 15px;
    margin-left: 20px;
 }
@@ -497,7 +501,7 @@ transform :translateY(-2px);
 } 
 
 .umid__txt{
-    color: white;
+    color: #686868;
     margin-left: -10px;
 }
 
@@ -516,7 +520,7 @@ transform :translateY(-2px);
 }
 
 .jalol__txt{
-    color: white;
+    color: #686868;
     margin-left: 10px;
     margin-left: -20px;
 } 
@@ -534,7 +538,7 @@ transform :translateY(-2px);
 }
 
 .akbar__txt{
-    color: white;
+    color: #686868;
     margin-left: 10px;
 }
 
@@ -555,7 +559,7 @@ transform :translateY(-2px);
 }
 
 .islom__txt{
-    color: white;
+    color: #686868;
     margin-left: 20px;
 }
 
@@ -571,7 +575,7 @@ transform :translateY(-2px);
 }
 
 .muhammad__txt{
-    color: white;
+    color: #686868;
     margin-left: 10px;
 }
 
@@ -588,7 +592,7 @@ transform :translateY(-2px);
 }
 
 .shahzod__txt{
-    color: white;
+    color: #686868;
     font-size: 15px;
     margin-left: 15px;
 }
@@ -715,7 +719,7 @@ transform :translateY(-2px);
     gap: 5px;
     margin-top: 10px;
 }
-
+ 
 .fa-suitcase{
     margin-top: 4px;
 }
@@ -882,7 +886,6 @@ img:hover{
 .bye:hover{
     color: #00ff6a;
 }
-
 
 
 
