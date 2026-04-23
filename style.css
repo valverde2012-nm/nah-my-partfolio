@@ -210,23 +210,32 @@ transform :translateY(-2px);
 
 .ustozlarim__img1{
     width: 200px;
-     border: 4px solid #ffffff;
+    border: 4px solid #ffffff;
     box-shadow: 0 0 25px #a8ba0a, 0 0 60px #ffd000;
-    transition: 0.4s;
+    transition: 0.3s;
+}
+.ustozlarim__img1:hover{
+    box-shadow: 0 0 35px #ba590a, 0 0 75px #ffd000;
+}
+.ustozlarim__img2:hover{
+    box-shadow: 0 0 35px #24033f, 0 0 75px #410558;
+}
+.ustozlarim__img3:hover{
+    box-shadow: 0 0 35px #2b0b26, 0 0 75px #0e0111;
 }
 
 .ustozlarim__img2{
     width: 200px;
     border: 4px solid #23d100;
-    box-shadow: 0 0 25px #5a0481, 0 0 60px #00fff2;
-    transition: 0.4s;
+    box-shadow: 0 0 35px #5a0481, 0 0 75px #00fff2;
+    transition: 0.3s;
 }
 
 .ustozlarim__img3{
     width: 200px;
-     border: 4px solid #650aba;
-    box-shadow: 0 0 25px #0aba27, 0 0 60px #4d0aba;
-    transition: 0.4s;
+    border: 4px solid #650aba;
+    box-shadow: 0 0 35px #0aba27, 0 0 75px #9b89b9;
+    transition: 0.3s;
 }
 
 .loyiha__text{
@@ -330,7 +339,19 @@ transform :translateY(-2px);
     transition: 0.4s;
     background: #1e293b;
  }
-
+ 
+ .html:hover{
+    background-color:#e73600 ;
+    transform: translateY(-35px);
+ }
+  .css:hover{
+    background-color:#2407a5 ;
+    transform: translateY(-20px);
+ }
+  .js:hover{
+    background-color:#e7bd00 ;
+    transform: translateY(-35px);
+ }
  .html__txt{
     margin-left: 15px;
     margin-top: 30px;
