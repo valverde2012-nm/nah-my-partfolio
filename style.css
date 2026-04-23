@@ -320,17 +320,15 @@ transform :translateY(-2px);
 }
 
  .html{
-  width: 350px;
-  height: 280px;
-
-  margin-left: -150px;
-  border-radius: 10px;
+    width: 350px;
+    height: 280px;
+    margin-left: -150px;
+    border-radius: 10px;
     object-fit: cover;
     border: 4px solid #ba7c0a;
     box-shadow: 0 0 25px #ff5e00, 0 0 60px #ad6800;
     transition: 0.4s;
     background: #1e293b;
-border-left: 4px solid #e34c26;
  }
 
  .html__txt{
@@ -342,13 +340,13 @@ border-left: 4px solid #e34c26;
      width: 350px;
      height: 280px;
      background: #1e293b;
-border-left: 4px solid #264de4;
+     border-left: 4px solid #264de4;
      margin-left: -150px;
      border-radius: 10px;
-    object-fit: cover;
-    border: 4px solid #0a56ba;
-    box-shadow: 0 0 25px #0400ff, 0 0 60px #008aad;
-    transition: 0.4s;
+     object-fit: cover;
+     border: 4px solid #0a56ba;
+     box-shadow: 0 0 25px #0400ff, 0 0 60px #008aad;
+     transition: 0.4s;
  }
 
   .css__txt{
@@ -391,16 +389,18 @@ border-left: 4px solid #264de4;
 
 .sinf__images{
     display: flex;
-    justify-content: space-between;
+    gap: 350px;
+    margin-left: 100px;
+    
 }
 .shaxzed{
-    width: 200px;
-    margin-left: 40px;
+    width: 300px;
+    margin-left: 30px;
     border-radius: 20px;
 }
 
 .muhammad{
-    width: 200px;
+    width: 300px;
     margin-right: 40px;
     border-radius: 20px;
 }
@@ -408,6 +408,8 @@ border-left: 4px solid #264de4;
 .team{
     width: 450px;
     border-radius: 20px;
+    margin-top: 100px;
+    margin-left: 380px;
 }
 
 .ortoglarim__text{
@@ -587,7 +589,7 @@ border-left: 4px solid #264de4;
 
 .Shahzod{
     color: white;
-    font-size: 17px;
+    font-size: 19px;
     margin-left: 5px;
 }
 
