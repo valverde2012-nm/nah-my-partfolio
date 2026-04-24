@@ -25,7 +25,7 @@ document.querySelector(".btn__right").addEventListener("click", async function (
 
 
   if (!name || !email || !subject || !message) {
-    showNotify("⚠️ Iltimos, hamma joyni to‘ldir!", "error");
+    showNotify("⚠️ Iltimos, hamma joyni to‘ldiring!", "error");
     return;
   }
 
