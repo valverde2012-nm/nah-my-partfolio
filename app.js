@@ -16,105 +16,100 @@ setInterval(soat, 1000);
 
 
 
-document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector(".form");
+document.querySelector(".btn__right").addEventListener("click", async function () {
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault();
-
-        const name = form.querySelector(".name").value.trim();
-        const email = form.querySelector(".email").value.trim();
-        const message = form.querySelector(".textarea").value.trim();
-
-        // Telegram API uchun kerakli ma’lumotlar
-        const token = "8717864718:AAFjjSjoQ8kR7gtzELnaH38weE3CbTZLgKg";
-        const chat_id = "5968343355";
-        const telegramUrl = `https://api.telegram.org/bot${token}/sendMessage`;
-
-        const text = `
-📩 *Yangi ariza!*
-👤 Ismi: *${name}*
-✉️ Email: *${email}*
-💬 Izoh: ${message}
-    `;
-        console.log(text);
-
-        // API orqali yuborish
-        fetch(telegramUrl, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                chat_id: chat_id,
-                text: text,
-            }),
-
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-
-                if (data.ok) {
-                    Swal.fire({
-                        title: "Yuborildi",
-                        text: "Xabar muvaffaqiyatli jo'natildi",
-                        icon: "success"
-                    });
-                    form.reset();
-                } else {
-                    Swal.fire({
-                        title: "Xatolik",
-                        text: data.description || "Xatolik yuz berdi",
-                        icon: "error"
-                    });
-                }
-            })
-            .catch(error => {
-                console.error(error);
-                Swal.fire({
-                    title: "Xatolik",
-                    text: "Server bilan ulanishda muammo",
-                    icon: "error"
-                });
-            });
-    });
-});
+  let name = document.querySelector(".input__right").value.trim();
+  let email = document.querySelector(".input__right2").value.trim();
+  let subject = document.querySelector(".input__right3").value.trim();
+  let message = document.querySelector(".input__right4").value.trim();
 
 
-
-
-document.querySelector(".btn__right").addEventListener("click", function () {
-  
-  let name = document.querySelector(".input__right").value;
-  let email = document.querySelector(".input__right2").value;
-  let subject = document.querySelector(".input__right3").value;
-  let message = document.querySelector(".input__right4").value;
+  if (!name || !email || !subject || !message) {
+    showNotify("⚠️ Iltimos, hamma joyni to‘ldir!", "error");
+    return;
+  }
 
   let text = `📩 Yangi xabar:
-👤 Ism: ${name}
-📧 Email: ${email}
-📌 Nomer: ${subject}
-💬 Message: ${message}`;
+ 👤 Ism: ${name}
+ 📧 Email: ${email}
+ 📌 Nomer: ${subject}
+ 💬 Message: ${message}`;
 
-  let token = "8714532480:AAGfrrWPZMiQNzH0H9AiBHEPF-wtevKHlhk";  
-  let chat_id = "580607993";  
+  let token = "8714532480:AAGfrrWPZMiQNzH0H9AiBHEPF-wtevKHlhk";
+  let chat_id = "580607993";
 
-  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      chat_id: chat_id,
-      text: text
-    })
-  })
-  .then(() => {
-    alert("Xabar yuborildi ✅");
-  })
-  .catch(() => {
-    alert("Xatolik ❌");
-  });
+  try {
+    let res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        chat_id: chat_id,
+        text: text
+      })
+    });
+
+    if (res.ok) {
+      showNotify("✅ Xabar muvaffaqiyatli yuborildi!", "success");
+
+      document.querySelector(".input__right").value = "";
+      document.querySelector(".input__right2").value = "";
+      document.querySelector(".input__right3").value = "";
+      document.querySelector(".input__right4").value = "";
+
+    } else {
+      throw new Error();
+    }
+
+  } catch (err) {
+    showNotify("❌ Xatolik yuz berdi!", "error");
+  }
 
 });
+
+
+
+function showNotify(text, type) {
+  let notify = document.createElement("div");
+  notify.innerText = text;
+
+  
+  let bg;
+  if (type === "success") {
+    bg = "linear-gradient(135deg, #00c853, #69f0ae)";
+  } else {
+    bg = "linear-gradient(135deg, #ff4b2b, #ff416c)";
+  }
+
+  notify.style.position = "fixed";
+  notify.style.top = "30px";
+  notify.style.right = "30px";
+  notify.style.background = bg;
+  notify.style.color = "#fff";
+  notify.style.padding = "15px 25px";
+  notify.style.borderRadius = "12px";
+  notify.style.boxShadow = "0 10px 25px rgba(0,0,0,0.3)";
+  notify.style.fontSize = "16px";
+  notify.style.fontWeight = "500";
+  notify.style.zIndex = "9999";
+  notify.style.opacity = "0";
+  notify.style.transform = "translateY(-20px)";
+  notify.style.transition = "all 0.4s ease";
+
+  document.body.appendChild(notify);
+
+  setTimeout(() => {
+    notify.style.opacity = "1";
+    notify.style.transform = "translateY(0)";
+  }, 100);
+
+  setTimeout(() => {
+    notify.style.opacity = "0";
+    notify.style.transform = "translateY(-20px)";
+  }, 2500);
+
+  setTimeout(() => {
+    notify.remove();
+  }, 3000);
+}
