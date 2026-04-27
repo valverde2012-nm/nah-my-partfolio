@@ -912,3 +912,11 @@ img:hover{
 
 
 
+.email__phone{
+    margin-top: -5px;
+}
+
+.fa-envelope:hover{
+     color: yellow;
+    transition: 0.3;
+}
